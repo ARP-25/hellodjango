@@ -13,4 +13,8 @@ from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hellodjango.settings')
 
+os.environ.setdefault("DATABASE_URL", "postgres://rrpwhrdm:hEUS3hF_n71r_y8t_3jEqGzlOyZATWtD@trumpet.db.elephantsql.com/rrpwhrdm")
+
+
+
 application = get_wsgi_application()

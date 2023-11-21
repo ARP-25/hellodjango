@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,6 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['8000-arp25-hellodjango-4und718u6xf.ws-eu106.gitpod.io']
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-arp25-hellodjango-4und718u6xf.ws-eu106.gitpod.io']
+
+os.environ.setdefault("DATABASE_URL", "postgres://rrpwhrdm:hEUS3hF_n71r_y8t_3jEqGzlOyZATWtD@trumpet.db.elephantsql.com/rrpwhrdm")
 
 # Application definition
 
@@ -76,10 +79,7 @@ WSGI_APPLICATION = 'hellodjango.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse("postgres://rrpwhrdm:hEUS3hF_n71r_y8t_3jEqGzlOyZATWtD@trumpet.db.elephantsql.com/rrpwhrdm")
 }
 
 
